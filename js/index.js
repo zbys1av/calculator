@@ -49,6 +49,13 @@ function operPressed(ev) {
   }
 }
 
+document.querySelector('.percentage').addEventListener('click', percPressed);
+
+function percPressed(ev) {
+  // find some % of number
+  digitPressed(ev);
+}
+
 document.querySelector('.erase').addEventListener('click', erasePressed);
 
 function erasePressed() {
@@ -69,6 +76,11 @@ function eqPressed() {
   //display.value = Math.round((eval(display.value) + Number.EPSILON) * 100) / 100;
   historyDisplay.value += display.value;
   let divisionZero = 'Division cannot be zero';
+  if (display.value.indexOf('%') > -1) {
+    let firstValue = display.value.substring(0, display.value.indexOf('%'));
+    let secondValue = display.value.substring(display.value.indexOf('%') + 1);
+    display.value = (firstValue * secondValue) / 100;
+  }
   if (eval(display.value).toFixed(2) == Infinity) {
     display.value = divisionZero;
   } else {
