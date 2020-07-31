@@ -13,6 +13,9 @@ function digitPressed(ev) {
 document.querySelector('.point').addEventListener('click', pointPressed);
 
 function pointPressed() {
+  if (display.value.endsWith('.')) {
+    display.value = display.value.substring(0, display.value.length - 1);
+  }
   if (display.value === '') {
     display.value += '0.';
   } else {
@@ -26,22 +29,24 @@ document
 
 function operPressed(ev) {
   const oper = ev.target.innerText;
-  for (let i = 0; i < 1; i++) {
-    if (display.value === '') {
-      if (oper === '+' || oper === '/' || oper === '*') {
-        display.value += '0' + oper;
-      }
-    }
-    if (display.value.indexOf(oper) === display.value.length + 1) {
-      eqPressed();
-      display.value = display.value.split('+').join('');
-      display.value = display.value.split('*').join('');
-      display.value = display.value.split('-').join('');
-      display.value = display.value.split('/').join('');
-    }
+  // for (let i = 0; i < 1; i++) {
+  //   if (display.value === '') {
+  //     if (oper === '+' || oper === '/' || oper === '*') {
+  //       display.value += '0' + oper;
+  //     }
+  //   }
+  if (
+    display.value.endsWith('+') ||
+    display.value.endsWith('-') ||
+    display.value.endsWith('*') ||
+    display.value.endsWith('/')
+  ) {
+    display.value =
+      display.value.substring(0, display.value.length - 1) +
+      ev.target.innerText;
+  } else {
+    display.value += ev.target.innerText;
   }
-  display.value += oper;
-  // }
 }
 
 document.querySelector('.percentage').addEventListener('click', percPressed);
@@ -80,7 +85,7 @@ function eqPressed() {
   ) {
     display.value = divisionZero;
   } else {
-    display.value = eval(display.value).toFixed(2);
+    display.value = Math.round(eval(display.value) * 1000000000) / 1000000000; // to fixed is not the best method
   }
   historyDisplay.value += '=' + display.value + ' ';
 }
@@ -90,6 +95,3 @@ document.querySelector('.history').addEventListener('click', historyPressed);
 function historyPressed() {
   historyDisplay.value = '';
 }
-
-// changing all opers
-// point
