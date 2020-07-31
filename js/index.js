@@ -74,7 +74,10 @@ function eqPressed() {
     let secondValue = display.value.substring(display.value.indexOf('%') + 1);
     display.value = (firstValue * secondValue) / 100;
   }
-  if (eval(display.value).toFixed(2) == Infinity) {
+  if (
+    eval(display.value).toFixed(2) == Infinity ||
+    eval(display.value).toFixed(2) == -Infinity
+  ) {
     display.value = divisionZero;
   } else {
     display.value = eval(display.value).toFixed(2);
