@@ -1,0 +1,24 @@
+.digits {
+  width: 100px;
+}
+
+.digits > button {
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin: 3px;
+}
+
+.point {
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin: 3px;
+}
+
+.eq {
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin: 3px;
+}
