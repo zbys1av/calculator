@@ -74,6 +74,7 @@ document.querySelector('.eq').addEventListener('click', eqPressed);
 function eqPressed() {
   historyDisplay.value += display.value;
   let divisionZero = 'Division cannot be zero';
+  let a = "";
   if (display.value.indexOf('%') > -1) {
     let firstValue = display.value.substring(0, display.value.indexOf('%'));
     let secondValue = display.value.substring(display.value.indexOf('%') + 1);
@@ -90,7 +91,7 @@ function eqPressed() {
   historyDisplay.value += '=' + display.value + ' ';
 }
 
-document.querySelector('.history').addEventListener('click', historyPressed);
+document.querySelector('.historyBtn').addEventListener('click', historyPressed);
 
 function historyPressed() {
   historyDisplay.value = '';
