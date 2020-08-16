@@ -72,7 +72,8 @@ function eraseLastPressed() {
 document.querySelector('.eq').addEventListener('click', eqPressed);
 
 function eqPressed() {
-  historyDisplay.value += display.value;
+  let displayValue = display.value;
+  // historyDisplay.value += display.value;
   let divisionZero = 'Division cannot be zero';
   let a = "";
   if (display.value.indexOf('%') > -1) {
@@ -88,7 +89,8 @@ function eqPressed() {
   } else {
     display.value = Math.round(eval(display.value) * 1000000000) / 1000000000; // to fixed is not the best method
   }
-  historyDisplay.value += '=' + display.value + ' ';
+  // let b = historyDisplay.value + '=' + display.value + ' ';
+  historyDisplay.value = displayValue + '=' + display.value + "\n" + historyDisplay.value;
 }
 
 document.querySelector('.historyBtn').addEventListener('click', historyPressed);
