@@ -3,7 +3,14 @@
 body{
   display: flex;
   justify-content: center;
-  background-color: rgb(53, 71, 99);
+  background-color: rgb(219, 219, 219);
+  color: black;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .alert {

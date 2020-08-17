@@ -4,46 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index-light.css"/>
   </head>
   <body>
-    <div class="calc">
-      <input type="text" class="display" readonly placeholder="0">
-      <div class="digits">
-        <button id="one">1</button>
-        <button id="two">2</button>
-        <button id="three">3</button>
-        <button id="four">4</button>
-        <button id="five">5</button>
-        <button id="six">6</button>
-        <button id="seven">7</button>
-        <button id="eight">8</button>
-        <button id="nine">9</button>
-        <button id="zero">0</button>
-        <button id="point" class="point">.</button>
-        <button id="empty" class="empty"></button>
+    <header>
+      <a href="#" onclick="changeCSS('css/index-light.css', 0);">
+        <label>
+            <input type="radio" name="theme" checked>
+            Light
+        </label>
+      </a> 
+      <a href="#" onclick="changeCSS('css/index-dark.css', 0);">
+          <label>
+              <input type="radio" name="theme">
+              Dark
+          </label>
+      </a>
+    </header>
+      <div class="calc">
+        <input type="text" class="display" readonly placeholder="0">
+        <div class="digits">
+          <button id="one">1</button>
+          <button id="two">2</button>
+          <button id="three">3</button>
+          <button id="four">4</button>
+          <button id="five">5</button>
+          <button id="six">6</button>
+          <button id="seven">7</button>
+          <button id="eight">8</button>
+          <button id="nine">9</button>
+          <button id="zero">0</button>
+          <button id="point" class="point">.</button>
+          <button id="empty" class="empty"></button>
+        </div>
+        <div class="opers">
+            <button>+</button>
+            <button>-</button>
+            <button>*</button>
+            <button>/</button>
+        </div>
+        <div class="percentage">
+          <button>%</button>
+        </div>
+        <button id="equals" class="eq">=</button>
+        <button id="erase" class="erase">C</button>
+        <button id="erLast" class="erase-last-element">&lt;</button>
+        <div class="history">
+          <textarea
+            class="historyDisplay"
+            readonly
+            placeholder="nothing here yet"
+          ></textarea>
+          <button class="historyBtn">let's forget this</button>
+        </div>
       </div>
-      <div class="opers">
-          <button>+</button>
-          <button>-</button>
-          <button>*</button>
-          <button>/</button>
-      </div>
-      <div class="percentage">
-        <button>%</button>
-      </div>
-      <button id="equals" class="eq">=</button>
-      <button id="erase" class="erase">C</button>
-      <button id="erLast" class="erase-last-element">&lt;</button>
-      <div class="history">
-        <textarea
-          class="historyDisplay"
-          readonly
-          placeholder="nothing here yet"
-        ></textarea>
-        <button class="historyBtn">let's forget this</button>
-      </div>
-    </div>
+    <footer>
+      <p>made by Zbyslav</p>
+    </footer>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

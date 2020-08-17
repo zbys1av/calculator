@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+body{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(39, 39, 39);
+  color: white;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.alert {
+  position: fixed;
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  left: 0%;
+  text-align: center;
+  background-color:rgba(74, 62, 85, 0.418);
+  z-index: 1051;
+  border: 0;
+  border-radius: 0;
+}
+
+textarea{
+  resize: none;
+}
+
+#one{
+  grid-area: on;
+}
+
+#two{
+  grid-area: tw;
+}
+
+#three{
+  grid-area: th;
+}
+
+#four{
+  grid-area: fo;
+}
+
+#five{
+  grid-area: fi;
+}
+
+#six{
+  grid-area: si;
+}
+
+#seven{
+  grid-area: se;
+}
+
+#eight{
+  grid-area: ei;
+}
+
+#nine{
+  grid-area: ni;
+}
+
+#zero{
+  grid-area: ze;
+}
+
+#erase{
+  grid-area: era;
+}
+
+#erLast{
+  grid-area: erl;
+}
+
+.historyDisplay{
+  width: 125px;
+  height: 50px;
+}
+
+.history{
+  display: flex;
+  flex-direction: column;
+  grid-area: his;
+  margin: 0;
+}
+
+.history button{
+  display: flex;
+  flex-direction: column;
+  grid-area: his;
+  /* margin: 0; */
+  /* height: 26.25px; */
+}
+
+.opers{
+  display: grid;
+  width: 55px;
+  grid-area: ope;
+}
+
+#equals{
+  grid-area: equ;
+}
+
+.percentage{
+  display: grid;
+  grid-area: per;
+  /* height: 26.25px; */
+}
+
+#empty{
+  grid-area: emt;
+}
+
+.digits {
+  /* width: 100px; */
+  grid-area: dig;
+  display: grid;
+  /* margin: 15px 0 15px 0; */
+  /* grid-template-columns: 50px 250px; */
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(20px, auto);
+  grid-template-areas: 
+  "ni ei se"
+  "si fi fo"
+  "th tw on"
+  "poi ze emt";
+}
+
+.calc{
+  position: absolute;
+  top: 40%;
+  width: 275px;
+  display: grid;
+  /* margin: 15px 0 15px 0; */
+  /* grid-template-columns: 50px 250px; */
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(25px, auto);
+  grid-template-areas: 
+  "dis era erl"
+  "dig ope his"
+  "dig ope per"
+  "equ equ equ";
+}
+
+.point {
+  /* width: 25px;
+  height: 25px; */
+  /* float: left; */
+  /* margin: 3px; */
+  grid-area: poi;
+}
+
+.display{
+  grid-area: dis;
+}
+
+/* .digits > button {
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin: 3px;          
+} */
